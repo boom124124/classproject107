@@ -45,12 +45,10 @@ def goal_track(img, bbox):
     ys.append(c2)
 
     for i in range(len(xs)-1):
-        cv2.circle(img,xs[i],ys[i],2,(0,0,255),5)
+        cv2.circle(img,(xs[i],ys[i]),2,(0,0,255),5)
+        
 
-    #################
-    # ADD CODE HERE #
-    goal_track(img,bbox)
-    #################
+   
 
 while True:
     
@@ -64,9 +62,8 @@ while True:
     else:
         cv2.putText(img,"Lost",(75,90),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
 
-    #################
-    # ADD CODE HERE #
-    #################
+    goal_track(img,bbox)
+
 
     cv2.imshow("result", img)
             
